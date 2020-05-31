@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<style>
+#app ul {
+    list-style: none;
+}
+
+#app li > span.done {
+    text-decoration: line-through;
+}
+
+[v-cloak] {
+    display: none;
+}
+</style>
+
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+</head>
+<body>
+    <h2>BitCoin App</h2>
+    <div id="app">
+        <section v-if="hasError">Errorが起きたよ</section>
+        <section v-else>
+            <div v-if="loading">
+                Now Loading...
+            </div>
+            <ul v-cloak>
+                <li v-for="(rate, currency) in bpi">
+                    {{ currency }} : {{ rate.rate_float | currencyDecimal }}
+                </li>
+            </ul>
+        </section>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+<script src="js/bitcoin.js"></script>
+</body>
+</html>
