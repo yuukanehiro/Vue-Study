@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+
+<style>
+.large {
+    font-size: 36px;
+}
+
+.text-danger {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+<div id="app">
+    <p>
+        Hello <span v-bind:class="{large: isLarge, 'text-danger': hasError}">優技録</span>
+    </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="js/classbind.js"></script>
+</body>
+</html>
