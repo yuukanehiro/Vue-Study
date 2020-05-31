@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<style>
+#app ul {
+    list-style: none;
+}
+
+#app li > span.done {
+    text-decoration: line-through;
+}
+</style>
+
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+</head>
+<body>
+    <h2>ToDo list</h2>
+    <div id="app">
+        <form v-on:submit.prevent>
+            <input type="text" v-model="newItem">
+            <button v-on:click="addItem">
+                追加だ！
+            </button>
+        </form>
+        <ul>
+            <li v-for="(todo, index) in todos">
+                <input type="checkbox" v-model="todo.isDone">
+                <span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
+                <button v-on:click="deleteItem(index)">削除</button>
+            </li>
+        </ul>
+        <pre>{{ $data }}</pre>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="js/todolist.js"></script>
+</body>
+</html>
