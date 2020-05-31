@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p v-if="toggle">
+            <a v-bind:href="url">優技録</a>
+        </p>
+        <ul>
+            <li v-for="language in languages">{{ language }}</li>
+        </ul>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="js/vfor.js"></script>
+</body>
+</html>
