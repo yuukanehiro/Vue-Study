@@ -1,7 +1,8 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <LikeNumber></LikeNumber>
+    <LikeHeader :total-number="number"></LikeHeader>
+    <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
+    <LikeNumber :total-number="number"></LikeNumber>
   </div>
 </template>>
 
@@ -16,7 +17,12 @@ export default {
     },
     data() {
       return {
-        number: 5
+        number: 10
+      }
+    },
+    methods: {
+      incrementNumber(value) {
+        this.number = value;
       }
     }
 }
